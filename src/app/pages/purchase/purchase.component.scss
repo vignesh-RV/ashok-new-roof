@@ -1,0 +1,63 @@
+.purchase-container{
+    .card-container{
+        padding: 0 3rem;
+        mat-card{
+            background-color: #faf4f4;
+            color: #7f8fa4;
+        }
+        .icon-container{
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            border: solid 1px;
+            border-radius: 10px;
+            top: -20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .purchase-type-info{
+            color: #7f8fa4;
+            text-transform: uppercase;
+            margin: 20px 0 5px 0;
+        }
+        span.currency {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 13px 0;
+            display: inline-flex;
+            color: #354052;
+        }
+        .user-limit{
+            color: #354052;
+            font-weight: bold;
+        }
+        .purchase-type-1{
+            background: linear-gradient(to bottom, #39b54a, #34aa44);
+            border-color: #34aa44;
+            color: #fff;
+        }
+        .purchase-type-2{
+            background: linear-gradient(to bottom, #fd9a18, #f16911);
+            border-color: #f16911;
+            color: #fff;
+        }
+        .purchase-type-3{
+            background: linear-gradient(to bottom, #2ea1f8, #1990ea);
+            border-color: #1990ea;
+            color: #fff;
+        }
+        .purchase-features{
+            p{
+                margin-bottom: 5px !important;
+            }
+        }
+    }
+    .report-header{
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+}

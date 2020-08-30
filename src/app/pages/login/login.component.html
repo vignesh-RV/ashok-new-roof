@@ -1,0 +1,67 @@
+<div class="container" id="login-page-container">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>
+                {{ isRegisterPage ? 'Sign up to Get Started' : 'Welcome back! Please login.'}}
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+                <div class="container">
+                    <div class="form-group">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Log in with your e-mail address</mat-label>
+                            <input matInput formControlName="username" placeholder="clark@dashboard.com">
+                            <mat-error *ngIf="getControl('username')?.errors?.required">Should not be blank..</mat-error>
+                            <mat-error *ngIf="getControl('username')?.errors?.email">Invalid Email..</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input matInput type="password" formControlName="password" placeholder="Numbers, Letters...">
+                            <mat-error *ngIf="getControl('password')?.errors?.required">Should not be blank..</mat-error>
+                            <mat-error *ngIf="getControl('password')?.errors?.minlength">Invalid, Password must be at least 6 characters long..</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <div *ngIf="isRegisterPage" class="form-group">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Confirm Password</mat-label>
+                            <input matInput type="password" formControlName="confirmPassword" placeholder="Numbers, Letters...">
+                            <mat-error *ngIf="getControl('confirmPassword')?.errors?.required">Should not be blank..</mat-error>
+                            <mat-error *ngIf="getControl('confirmPassword')?.errors?.minlength">Invalid, Password must be at least 6 characters long..</mat-error>
+                            <mat-error *ngIf="getControl('confirmPassword')?.errors?.mismatch">Passwords are not matching..</mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <button type="submit" class="w-100" mat-raised-button color="primary">
+                        {{ isRegisterPage ? 'Sign Up' : 'Sign in to Dashboard' }}
+                    </button>
+                </div>
+            </form>
+            <div class="container" id="login-form-footer">
+                <label *ngIf="false" class="btn-control-separator">Login via social networks</label>
+                <div *ngIf="false" class="social-btn-control">
+                    <button mat-fab color="primary">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">facebook</mat-icon>
+                    </button>
+                    <button mat-fab color="primary">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">facebook</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <div class="login-page-footer">
+        <div class="row">
+            <div class="col-8 links register-link">
+                <a *ngIf="!isRegisterPage" [routerLink]="'/register'">Don't have an account yet? Get Started</a>
+                <a *ngIf="isRegisterPage" [routerLink]="'/login'">Already have an account, login instead</a>
+            </div>
+            <div class="col-4 links forgot-password">
+                <a>Forgot Password ?</a>
+            </div>
+        </div>
+    </div>
+</div>

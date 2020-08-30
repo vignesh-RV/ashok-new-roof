@@ -1,0 +1,24 @@
+<div class="row map-body">
+    <div *ngFor="let project of filteredProject | async" class="col-sm-4 map-view">
+        <mat-card class="map-card">
+            <div class="map-view-container">
+                <img mat-card-image [src]="project.imgUrl" alt="">
+                <span *ngIf="project.payment_status ==='Active'" class="active-status project-status-indicator">Active</span>
+                <span  *ngIf="project.payment_status ==='Completed'" class="completed-status project-status-indicator">Completed</span>
+            </div>
+            <mat-card-content>
+                <label class="name">{{project.project_name}}</label>
+                <p class="address-field">Address: <span class="font-weight-bold">{{project.location}}</span></p>
+            </mat-card-content>
+            <mat-card-actions>
+                <a mat-button class="btn btn-primary view-btn" [routerLink]="'/projects/view/'+ project.id">View</a>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <p *ngIf="!(filteredProject | async)?.length" class="m-0 ml-3 text-danger">No data to display..</p>
+
+    <div [hidden]="!(filteredProject | async)?.length" class="col-12 project-list-paginator">
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+</div>

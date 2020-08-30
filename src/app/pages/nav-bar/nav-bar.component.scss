@@ -1,0 +1,52 @@
+#top-nav-bar-container{
+    display: flex;
+    align-items: center;
+    li.nav-item {
+        margin-right: 50px;
+        color: #9FA9BA;
+        font-size: 0.875rem;
+        outline: 0;
+        cursor: pointer;
+        &:active {
+            color: #739aca !important;
+        }
+    }
+}
+#app-logo-container{
+    display: flex;
+    align-items: flex-end;
+    .app-logo{
+        height: 70px;
+        cursor: pointer;
+    }
+}
+
+#user-info-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    label{
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        .user-badge{
+            height: 45px;
+            width: 45px;
+            border-radius: 100%;
+            margin-right: 6px;
+            color: #fff;
+            background-color: #00355d;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .username{
+            max-width: 120px;
+            overflow: hidden;
+            display: inline-block;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+}

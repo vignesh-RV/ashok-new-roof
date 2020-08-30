@@ -1,0 +1,115 @@
+<div id="project-view-container">
+    <div class="top-nav-bar">
+        <a class="btn btn-primary new-project mr-3" routerLink="/projects/create">New Project</a>
+    </div>
+    <div class="container mt-5">
+        <mat-tab-group>
+            <mat-tab label="Order Details" class="dot-active">
+                <div id="order-details-container">
+                    <mat-card class="order-details-card">
+                        <mat-card-content>
+                            <div class="order-details-main-info">
+                                <div class="row section-header">
+                                    <div class="col-4">
+                                        <label class="header-field">Project Name</label>
+                                        <label class="value-field">{{projectData?.project_name}}</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="header-field">Project Type</label>
+                                        <label class="value-field">{{projectData?.project_type}}</label>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="header-field">Product Type</label>
+                                        <label class="value-field">{{projectData?.product_type}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="map-container" class="mb-5">
+                                <agm-map #agmMap [latitude]='latitude' [longitude]='longitude' [zoom]='20'>
+                                <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"></agm-marker>
+                            </agm-map>
+                            </div>
+
+                            <div id="billing-section">
+                                <div class="row m-0 pb-2 section-divider">
+                                    <div class="col-6"><strong>Billing</strong></div>
+                                    <div class="col-6 text-right"><strong>Order #123</strong></div>
+                                </div>
+
+                                <div class="row section-header">
+                                    <div class="col-6">
+                                        <label><strong>Payment Method</strong></label>
+                                        <label class="w-100">Visa ending****4242</label>
+                                        <label>Smith@gmail.com</label>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <label><strong>Order Date</strong></label>
+                                        <label class="w-100">{{projectData?.updated_at | date: 'short'}}</label>
+                                    </div>
+                                </div>
+
+                                <div id="order-summary-container" class="row">
+                                    <label class="w-100 m-3 pb-2 section-divider"><strong>Order Summary</strong></label>
+                                    
+                                    <div class="w-100" id="order-summary-table-container">
+                                        <cdk-table [dataSource]="orderDataSource">
+                                            <!-- Project Type Definition -->
+                                            <ng-container cdkColumnDef="projectType">
+                                              <cdk-header-cell *cdkHeaderCellDef> Project Type </cdk-header-cell>
+                                              <cdk-cell *cdkCellDef="let row"> {{row?.projectType}} </cdk-cell>
+                                            </ng-container>
+                                          
+                                            <!-- Age Definition -->
+                                            <ng-container cdkColumnDef="price">
+                                              <cdk-header-cell *cdkHeaderCellDef> Price </cdk-header-cell>
+                                              <cdk-cell *cdkCellDef="let row"> {{row?.price}} </cdk-cell>
+                                            </ng-container>
+                                          
+                                            <!-- Quantity Definition -->
+                                            <ng-container cdkColumnDef="quantity">
+                                              <cdk-header-cell *cdkHeaderCellDef> Quantity </cdk-header-cell>
+                                              <cdk-cell *cdkCellDef="let row"> {{row?.quantity}} </cdk-cell>
+                                            </ng-container>
+
+                                            <!-- Totals Definition -->
+                                            <ng-container cdkColumnDef="total">
+                                                <cdk-header-cell *cdkHeaderCellDef> Totals </cdk-header-cell>
+                                                <cdk-cell *cdkCellDef="let row"> {{row?.total}} </cdk-cell>
+                                            </ng-container>
+                                          
+                                            <!-- Header and Row Declarations -->
+                                            <cdk-header-row *cdkHeaderRowDef="columns"></cdk-header-row>
+                                            <cdk-row *cdkRowDef="let row; columns: columns"></cdk-row>
+                                          </cdk-table>
+                                          <div class="custom-table-footer">
+                                              <div class="row">
+                                                  <label class="col-6 text-right order-header-field">Sub total</label>
+                                                  <label class="col-6 text-center order-value-field">$47.04</label>
+                                              </div>
+                                              <div class="row">
+                                                <label class="col-6 text-right order-header-field">Tax %</label>
+                                                <label class="col-6 text-center order-value-field">$4.00</label>
+                                            </div>
+                                            <div class="row">
+                                                <label class="col-6 text-right order-header-field">Total</label>
+                                                <label class="col-6 text-center grand-total order-value-field">$47.04</label>
+                                            </div>
+                                            <div class="row">
+                                                <div class="export-controls col-8 offset-4">
+                                                    <button mat-fab color="primary">
+                                                        <span class="material-icons"> picture_as_pdf </span>
+                                                    </button>                                              
+                                                    <button class="send-mail" mat-raised-button color="primary">Send Mail</button>
+                                                </div>
+                                            </div>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </mat-tab>
+        </mat-tab-group> 
+    </div>
+</div>

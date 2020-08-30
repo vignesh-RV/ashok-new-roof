@@ -1,0 +1,26 @@
+<div class="row h-100">
+    <div class="col-2" id="app-logo-container">
+        <img class="app-logo" (click)="redirectToHome()" src="assets/images/favicon.png" alt=""/>
+    </div>
+    <div class="col-7" id="top-nav-bar-container">
+        <ul class="nav nav-bar">
+            <li class="nav-item" *ngFor="let nav of navItems" [routerLink]="nav.link">{{nav.label}}</li>
+        </ul>
+    </div>
+    <div *ngIf="isHavingUserInfo()" class="col-3" id="user-info-container">
+        <label class="username-tag"
+        [popover]="popTemplate"
+        [outsideClick]="true" placement="bottom" container="body">
+        <span class="user-badge  alert-primary">U</span>
+        <span class="username"> {{loggedInUserData?.user?.name}}</span>
+        </label>
+
+    </div>
+</div>
+
+<ng-template #popTemplate>
+    <ul class="nav">
+        <li class="nav-item">Profile</li>
+        <li class="nav-item" (click)="doSignOut()">Signout</li>
+    </ul>
+</ng-template>

@@ -1,0 +1,37 @@
+#project-list-container{
+    .top-nav{
+        position: absolute;
+        z-index: 2;
+        right: 15px;
+        top: 90px;
+        cursor: pointer;
+        button.new-project{
+            background: #34a544 !important;
+            font-size: .75rem;
+            min-width: 120px;
+            outline: 0 !important;
+        }
+    }
+
+    span.custom-mat-badge {
+        display: inline-flex;
+        height: 25px;
+        width: 25px;
+        border-radius: 100%;
+        color: #fff;
+        align-items: center;
+        justify-content: center;
+        margin-left: 15px;
+        font-size: 11px;
+        font-weight: bold;
+        &.all-project{
+            background-color: #34a544;
+        }
+        &.act-project{
+            background-color: #ff7800;
+        }
+        &.comp-project{
+            background-color: #1d98f7;
+        }
+    }
+}

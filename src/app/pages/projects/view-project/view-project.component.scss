@@ -1,0 +1,93 @@
+cdk-row, cdk-header-row, cdk-footer-row {
+    display: flex;
+}
+
+cdk-cell, cdk-header-cell, cdk-footer-cell {
+    flex: 1;
+}
+
+.order-details-main-info{
+    .row{
+        
+        margin-top: 20px;
+        border-top: solid 1px #eee;
+        text-align: center;
+        .header-field{
+            width: 100%;
+            font-weight: bold;
+            color: #354052 !important;
+        }
+        .value-field{
+            color: #7f8fa4 !important;
+        }
+    }
+}
+
+.section-header{
+    padding: 20px 0;
+    margin: 20px 0;
+}
+.section-divider{
+    border-bottom: solid 1px #eee;
+}
+
+#order-summary-container{
+    padding: 10px;
+}
+
+.custom-table-footer{
+    width: 50%;
+    margin-left: 50%;
+    .row{
+        padding: 10px;
+        .order-header-field{
+            font-weight: bold;
+        }
+        .order-value-field{
+            padding-right: 40px;
+        }
+        .grand-total{
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+    }
+}
+
+.export-controls{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    button{
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        &.send-mail{
+            min-width: 120px;
+        }
+        ::ng-deep{
+            .mat-button-wrapper{
+                padding: 0;
+                span.material-icons{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+::ng-deep{
+    .cdk-header-row{
+        background-color: #f5f8fa;
+    }
+    .cdk-row{
+        border-bottom: solid 1px #eee;
+    }
+    .cdk-header-row, .cdk-row{
+        padding: 10px;
+        text-align: center;
+    }
+}

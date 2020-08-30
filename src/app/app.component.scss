@@ -1,0 +1,27 @@
+#roof-app-header{
+    height: 70px;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 0 40px;
+}
+
+#roof-app-body{
+    .container.app-theme-info{
+        display: flex;
+        justify-content: center;
+        padding: 4rem 0;
+    }
+}
+
+.app-theme-info-container{
+    text-align: center;
+    .app-theme-logo{
+        margin-bottom: 25px;
+    }
+    .app-theme-text{
+        line-height: 1.8;
+        .app-theme-text-top{
+            color: #7f8fa4 !important;
+        }
+    }
+}

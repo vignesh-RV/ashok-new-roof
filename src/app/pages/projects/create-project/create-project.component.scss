@@ -1,0 +1,21 @@
+.project-creation-container{
+    .mat-button-toggle-checked{
+        background-color: #00355d;
+        color: #fff;
+        text-align: center;
+        width: 180px;
+    }
+    span.material-icons{
+        font-size: 1rem;
+        margin-right: 10px;
+        font-weight: bold;
+    }
+    mat-button-toggle{
+        transition: width 1s ease-in-out;
+    }
+    .btn-cancel{
+        margin-right: 20px;
+        border: none;
+        background: #f95359 !important;
+    }
+}

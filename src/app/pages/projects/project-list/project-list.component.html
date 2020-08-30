@@ -1,0 +1,14 @@
+<div id="project-list-container">
+    <div class="top-nav">
+      <button class="btn btn-primary new-project" (click)="createNewProject()"> New Project</button>
+    </div>
+    <mat-tab-group>
+        <mat-tab *ngFor="let tab of allTabs" class="dot-active">
+            <ng-template mat-tab-label>
+              {{tab.tabName}}
+              <span class="custom-mat-badge {{tab.tabId}}">{{ (allProjects | projectFilter:tab.statusName).length }}</span>
+            </ng-template>
+            <filtered-project-list [allProjects]="allProjects | projectFilter:tab.statusName"></filtered-project-list>
+        </mat-tab>
+    </mat-tab-group>
+  </div>

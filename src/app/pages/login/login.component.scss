@@ -1,0 +1,55 @@
+#login-page-container{
+    width: 450px;
+    margin-bottom: 5rem;
+    .btn-control-separator{
+        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        white-space: nowrap;
+        &::before, &::after{
+            width: 30%;
+            background-color: #000;
+            height: 2px;
+            display: inline-flex;
+            content: '';
+        }
+        &::before{
+            margin-right: 5px;
+        }
+        &::after{
+            margin-left: 5px;
+        }
+    }
+
+    .login-page-footer{
+        margin-top: 10px;
+        .links{
+            color: #7f8fa4 !important;
+        }
+    }
+
+    .mat-card{
+        padding: 0 0 16px;
+        ::ng-deep{
+            .mat-card-header-text{
+                margin: 0;
+                width: 100%;
+                .mat-card-title{
+                    padding: 1.5625rem 1.875rem;
+                    border-bottom: 1px solid #e6eaee;
+                    background-color: #fafbfc;
+                    text-align: center;
+                }
+            }
+        }
+        .mat-card-content{
+            padding: 10px;
+        }
+
+        .mat-card-title{
+            padding: 1.5625rem 1.875rem;
+            border-bottom: 1px solid #e6eaee;
+            background-color: #fafbfc;
+        }
+    }
+}
