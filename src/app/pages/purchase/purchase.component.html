@@ -4,7 +4,7 @@
     <div class="main-content-container pb-5">
       <div><h3 class="report-header mb-5">Select a Report Type</h3></div>
       <div class="card-container row">
-        <div class="col-4" *ngFor="let purchaseType of purchaseTypes; let index = index">
+        <div class="col-sm-4 card-view" *ngFor="let purchaseType of purchaseTypes; let index = index">
           <mat-card class="card-element" >
             <div class="icon-container purchase-type-{{index+1}}">
               <span class="material-icons">{{purchaseType.iconClass}}</span>
