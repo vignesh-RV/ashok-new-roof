@@ -25,6 +25,9 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    position: absolute;
+    right: 4rem;
+    top:2rem;
     label{
         cursor: pointer;
         display: inline-flex;
@@ -47,6 +50,15 @@
             display: inline-block;
             text-overflow: ellipsis;
             white-space: nowrap;
+        }
+    }
+}
+
+.navbar{
+    .navbar-brand{
+        width: 100px !important;
+        .app-logo{
+            width: 70%;
         }
     }
 }

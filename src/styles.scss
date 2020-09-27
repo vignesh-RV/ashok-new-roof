@@ -127,6 +127,12 @@ agm-map{
     display: none;
 }
 
+.nav{
+    .username{
+        display: none;
+    }
+} 
+
 @media only screen and (max-width: 399px) {
     mat-tab-header{
         padding-right: 60px !important;
@@ -162,3 +168,20 @@ agm-map{
         margin-top: 7px;
     }
 }
+
+@media (max-width:641px)  {
+     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+     #user-info-container{  
+        label .username{
+             display: none !important;
+         }
+     }
+     .nav{
+        .username{
+            display: block !important;
+        }
+    } 
+    .nav-item:nth-child(1) {
+        border-bottom: solid 1px #eee;
+    }
+    }
