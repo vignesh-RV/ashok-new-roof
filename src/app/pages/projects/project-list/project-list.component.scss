@@ -3,8 +3,9 @@
         position: absolute;
         z-index: 2;
         right: 15px;
-        top: 90px;
+        top: 8.25rem;
         cursor: pointer;
+        transition: top .5s ease;
         button.new-project{
             background: #34a544 !important;
             font-size: .75rem;

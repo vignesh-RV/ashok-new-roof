@@ -38,4 +38,13 @@ export class NavBarComponent implements OnInit {
   redirectToHome(): any{
     this.common.redirectTo("projects");
   }
+
+  toggleClassOnBody(): any{
+    let body = document.querySelector("html body"), className = "menu-expanded";
+    if(body){
+      if(body.classList.contains(className))
+        body.classList.remove(className)
+      else body.classList.add(className)
+    }
+  }
 }

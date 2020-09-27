@@ -90,6 +90,13 @@ mat-ink-bar{
         &:hover{
             background-color: #eee;
         }
+        &.username{
+            background-color: #00355d;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 6px;
+        }
     }
 }
 
@@ -131,12 +138,33 @@ agm-map{
     .username{
         display: none;
     }
-} 
+}
 
-@media only screen and (max-width: 399px) {
+.menu-expanded .top-nav{
+    top: 12.25rem !important;
+}
+/**
+* Small Screen
+*/
+@media only screen and (max-width: 420px) {
     mat-tab-header{
         padding-right: 60px !important;
         padding-left: 1px !important;
+    }
+
+    .mat-tab-body-wrapper{
+        margin: 50px 20px;
+    }
+
+    mat-button-toggle-group {
+        flex-wrap: wrap;
+        mat-button-toggle{
+            border-bottom: solid 1px #eee;
+        }
+    }
+
+    mat-button-toggle-group mat-button-toggle{
+        width: 100% !important;
     }
 
     .new-project{
@@ -149,9 +177,20 @@ agm-map{
         width: 30px;
         margin-top: 7px;
     }
+
+    #login-page-container{
+        width: auto !important;
+    }
+
+    app-view-project .mat-tab-body-content{
+        padding: 10px 2px !important;
+    }
 }
 
-@media screen and (min-width: 400px) and (max-width: 599px) {
+/** 
+*   Medium screen
+*/
+@media screen and (min-width: 40px) and (max-width: 599px) {
     mat-tab-header{
         padding-right: 60px !important;
         padding-left: 1px !important;

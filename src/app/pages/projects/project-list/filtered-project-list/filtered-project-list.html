@@ -1,5 +1,5 @@
 <div class="row map-body">
-    <div *ngFor="let project of filteredProject | async" class="col-sm-4 map-view">
+    <div *ngFor="let project of filteredProject | async" class="col-sm-12 col-md-4 col-lg-3 map-view">
         <mat-card class="map-card">
             <div class="map-view-container">
                 <img mat-card-image [src]="project.imgUrl" alt="">
