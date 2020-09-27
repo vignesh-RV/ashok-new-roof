@@ -122,3 +122,43 @@ agm-map{
         color: #fff !important;
     }
 }
+
+.add-project{
+    display: none;
+}
+
+@media only screen and (max-width: 399px) {
+    mat-tab-header{
+        padding-right: 60px !important;
+        padding-left: 1px !important;
+    }
+
+    .new-project{
+        display: none;
+    }
+
+    .add-project{
+        display: block;
+        height: 30px;
+        width: 30px;
+        margin-top: 7px;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 599px) {
+    mat-tab-header{
+        padding-right: 60px !important;
+        padding-left: 1px !important;
+    }
+
+    .new-project{
+        display: none;
+    }
+
+    .add-project{
+        display: block;
+        height: 30px;
+        width: 30px;
+        margin-top: 7px;
+    }
+}

@@ -1,6 +1,8 @@
 <div id="project-list-container">
     <div class="top-nav">
       <button class="btn btn-primary new-project" (click)="createNewProject()"> New Project</button>
+      <!-- <img class="add-project" (click)="createNewProject()" src="assets/images/add-project.png" alt=""/> -->
+     <div class="add-project"> <mat-icon (click)="createNewProject()" aria-hidden="false" aria-label="add">add_circle_outline</mat-icon></div>
     </div>
     <mat-tab-group>
         <mat-tab *ngFor="let tab of allTabs" class="dot-active">
